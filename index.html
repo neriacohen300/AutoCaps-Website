@@ -68,8 +68,14 @@
       </div>
       
       <div class="platforms">
-        <div class="platform-pill"><i class="ti ti-video" aria-hidden="true"></i>Adobe Premiere Pro</div>
-        <div class="platform-pill"><i class="ti ti-movie" aria-hidden="true"></i>DaVinci Resolve</div>
+        <div class="platform-pill">
+          <span class="app-badge app-badge-pr" aria-hidden="true">Pr</span>
+          Adobe Premiere Pro
+        </div>
+        <div class="platform-pill">
+          <span class="app-badge app-badge-dv" aria-hidden="true">Dr</span>
+          DaVinci Resolve
+        </div>
         <div class="platform-pill"><i class="ti ti-language" aria-hidden="true"></i>עברית מלאה</div>
       </div>
     </div>
@@ -95,6 +101,11 @@
           <div class="feat-icon"><i class="ti ti-plug" aria-hidden="true"></i></div>
           <h3>שתי פלטפורמות</h3>
           <p>פועל ב-Premiere Pro וב-DaVinci Resolve.</p>
+        </div>
+        <div class="feat">
+          <div class="feat-icon"><i class="ti ti-scissors" aria-hidden="true"></i></div>
+          <h3>חיתוך שקט ב-Premiere</h3>
+          <p>זיהוי אוטומטי של קטעי שקט בטיימליין וחיתוכם בלחיצה אחת ב-Premiere Pro.</p>
         </div>
         <div class="feat">
           <div class="feat-icon"><i class="ti ti-currency-shekel" aria-hidden="true"></i></div>
@@ -129,16 +140,25 @@
               <div class="tl-caption" id="pr-cap2" style="left:140px;width:95px">על המחשב שלכם</div>
               <div class="tl-caption" id="pr-cap3" style="left:250px;width:110px">AutoCaps עם</div>
             </div>
-            <div class="tl-track">
+            <div class="tl-track" id="pr-video-track">
               <div class="tl-bg"></div>
               <div class="tl-clip video" id="pr-v1">V1 — ראיון</div>
-              <div class="tl-clip video v2-color" id="pr-v2">B-Roll</div>
-              <div class="tl-clip video" style="left:260px;width:130px" id="pr-v3">סיכום</div>
+              <div class="tl-gap" id="pr-gap1" style="left:140px;width:35px"></div>
+              <div class="tl-clip video v2-color" id="pr-v2" style="left:175px;width:90px">B-Roll</div>
+              <div class="tl-gap" id="pr-gap2" style="left:265px;width:35px"></div>
+              <div class="tl-clip video" style="left:300px;width:130px" id="pr-v3">סיכום</div>
             </div>
-            <div class="tl-track">
+            <div class="tl-track" id="pr-audio-track">
               <div class="tl-bg"></div>
-              <div class="tl-clip audio">A1 — אודיו ראשי</div>
-              <div class="tl-clip audio music-color">מוזיקה</div>
+              <div class="tl-clip audio" id="pr-a1">A1 — אודיו ראשי</div>
+              <div class="tl-gap" id="pr-gap3" style="left:220px;width:40px"></div>
+              <div class="tl-clip audio music-color" id="pr-a2" style="left:260px;width:80px">מוזיקה</div>
+            </div>
+            <div class="silence-btn-row">
+              <button class="silence-btn" id="silence-btn" onclick="cutSilence()">
+                <i class="ti ti-scissors" aria-hidden="true"></i>
+                חתוך שקט
+              </button>
             </div>
             
           </div>

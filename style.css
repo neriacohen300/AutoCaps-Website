@@ -186,6 +186,28 @@ body {
   color: #7c6af7; 
 }
 
+.app-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  font-family: system-ui, sans-serif;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.app-badge-pr {
+  background: linear-gradient(135deg, #4a3ae0, #7c6af7);
+}
+
+.app-badge-dv {
+  background: linear-gradient(135deg, #1a5a8a, #2fa5d6);
+}
+
 /* SECTIONS */
 .section { 
   padding: 80px 40px; 
@@ -422,6 +444,72 @@ body {
 .caption-track {
   opacity: 0; 
   transition: opacity .4s;
+}
+
+/* SILENCE GAP MARKERS */
+.tl-gap {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(45deg, rgba(224,85,85,0.22), rgba(224,85,85,0.22) 4px, rgba(224,85,85,0.4) 4px, rgba(224,85,85,0.4) 8px);
+  border: 1px dashed #e05555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity .35s ease, width .5s cubic-bezier(0.4,0,0.2,1), left .5s cubic-bezier(0.4,0,0.2,1);
+  z-index: 2;
+}
+
+.tl-gap::after {
+  content: 'שקט';
+  font-size: 9px;
+  font-weight: 700;
+  color: #e05555;
+  white-space: nowrap;
+}
+
+.tl-gap.cut {
+  opacity: 0;
+  width: 0 !important;
+}
+
+.silence-btn-row {
+  display: flex;
+  justify-content: center;
+  margin: 4px 0 8px;
+}
+
+.silence-btn {
+  background: rgba(224,85,85,0.08);
+  color: #e0a855;
+  border: 1px solid #6a4a20;
+  border-radius: 8px;
+  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background .2s, border-color .2s, transform .1s;
+}
+
+.silence-btn:hover {
+  border-color: #e0a855;
+  background: rgba(224,168,85,0.14);
+  transform: translateY(-1px);
+}
+
+.silence-btn:active {
+  transform: scale(0.97);
+}
+
+.silence-btn:disabled {
+  color: #666;
+  border-color: #333;
+  cursor: default;
 }
 
 .tl-caption { 

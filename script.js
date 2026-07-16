@@ -1,5 +1,7 @@
 var currentTab = 'pr';
 var running = false;
+var silenceCutRunning = false;
+var silenceCut = false;
 
 function switchTab(tab) {
   currentTab = tab;
@@ -34,6 +36,70 @@ function reset() {
       }
     });
   });
+
+  resetSilence();
+}
+
+function resetSilence() {
+  if (silenceCutRunning) return;
+  silenceCut = false;
+  ['pr-gap1', 'pr-gap2', 'pr-gap3'].forEach(function(id) {
+    var gap = document.getElementById(id);
+    if (gap) { gap.classList.remove('cut'); }
+  });
+  ['pr-v2', 'pr-v3', 'pr-a2'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) { el.style.transform = 'translateX(0)'; }
+  });
+  var sbtn = document.getElementById('silence-btn');
+  if (sbtn) {
+    sbtn.disabled = false;
+    sbtn.innerHTML = '<i class="ti ti-scissors" aria-hidden="true"></i> חתוך שקט';
+  }
+}
+
+function cutSilence() {
+  if (silenceCutRunning || silenceCut) return;
+  silenceCutRunning = true;
+  var sbtn = document.getElementById('silence-btn');
+  sbtn.disabled = true;
+  sbtn.innerHTML = '<i class="ti ti-loader" aria-hidden="true"></i> מזהה שקט...';
+
+  var st = document.getElementById('status-text');
+  st.textContent = 'סורק את הטיימליין לאיתור קטעי שקט...';
+  st.className = 'status-text active';
+
+  setTimeout(function() {
+    st.textContent = 'נמצאו 2 קטעי שקט...';
+  }, 900);
+
+  setTimeout(function() {
+    st.textContent = 'חותך ומזיז קליפים...';
+    ['pr-gap1', 'pr-gap2', 'pr-gap3'].forEach(function(id) {
+      var gap = document.getElementById(id);
+      if (gap) { gap.classList.add('cut'); }
+    });
+    // shift everything after gap1 (15px) and gap2 (15px) left in the video track
+    var v2 = document.getElementById('pr-v2');
+    var v3 = document.getElementById('pr-v3');
+    var a2 = document.getElementById('pr-a2');
+    if (v2) { v2.style.transform = 'translateX(-35px)'; }
+    if (v3) { v3.style.transform = 'translateX(-70px)'; }
+    if (a2) { a2.style.transform = 'translateX(-40px)'; }
+  }, 1700);
+
+  setTimeout(function() {
+    st.textContent = '✓ 2 קטעי שקט נחתכו בהצלחה';
+    st.className = 'status-text done';
+    sbtn.disabled = false;
+    sbtn.innerHTML = '<i class="ti ti-refresh" aria-hidden="true"></i> הרץ שוב';
+    silenceCutRunning = false;
+    silenceCut = true;
+    sbtn.onclick = function() {
+      resetSilence();
+      setTimeout(cutSilence, 50);
+    };
+  }, 2900);
 }
 
 function runDemo() {
