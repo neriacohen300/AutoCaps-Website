@@ -759,3 +759,14 @@ body {
 .footer a:hover { 
   text-decoration: underline; 
 }
+
+
+
+.feat a { 
+  color: #7c6af7; 
+  text-decoration: none; 
+}
+
+.feat a:hover { 
+  text-decoration: underline; 
+}
