@@ -21,6 +21,13 @@ body {
   overflow-x: hidden; 
 }
 
+.app-logo {
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
 
 /* LOGO */
 .logo-container {
