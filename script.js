@@ -2,6 +2,8 @@ var currentTab = 'pr';
 var running = false;
 var silenceCutRunning = false;
 var silenceCut = false;
+var podcastRunning = false;
+var podcastDone = false;
 
 function switchTab(tab) {
   currentTab = tab;
@@ -38,6 +40,7 @@ function reset() {
   });
 
   resetSilence();
+  resetPodcast();
 }
 
 function resetSilence() {
@@ -100,6 +103,65 @@ function cutSilence() {
       setTimeout(cutSilence, 50);
     };
   }, 2900);
+}
+
+function resetPodcast() {
+  if (podcastRunning) return;
+  podcastDone = false;
+  ['pod-seg1', 'pod-seg2', 'pod-seg3', 'pod-seg4', 'pod-seg5'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) { el.classList.remove('active'); }
+  });
+  var pbtn = document.getElementById('podcast-btn');
+  if (pbtn) {
+    pbtn.disabled = false;
+    pbtn.innerHTML = '<i class="ti ti-camera" aria-hidden="true"></i> עריכת פודקאסט';
+    pbtn.onclick = runPodcastDemo;
+  }
+}
+
+function runPodcastDemo() {
+  if (podcastRunning || podcastDone) return;
+  podcastRunning = true;
+  var pbtn = document.getElementById('podcast-btn');
+  pbtn.disabled = true;
+  pbtn.innerHTML = '<i class="ti ti-loader" aria-hidden="true"></i> מזהה דוברים...';
+
+  var st = document.getElementById('status-text');
+  st.textContent = 'מנתח מי מדבר בכל טראק אודיו...';
+  st.className = 'status-text active';
+
+  var segIds = ['pod-seg1', 'pod-seg2', 'pod-seg3', 'pod-seg4', 'pod-seg5'];
+  var delays = [1300, 1750, 2200, 2650, 3100];
+
+  setTimeout(function() {
+    st.textContent = 'בונה מפת חיתוכים בין המצלמות...';
+  }, 900);
+
+  setTimeout(function() {
+    pbtn.innerHTML = '<i class="ti ti-loader" aria-hidden="true"></i> מחליף מצלמות...';
+    st.textContent = 'מחליף אוטומטית בין דוברים...';
+  }, 1300);
+
+  segIds.forEach(function(id, i) {
+    setTimeout(function() {
+      var el = document.getElementById(id);
+      if (el) { el.classList.add('active'); }
+    }, delays[i]);
+  });
+
+  setTimeout(function() {
+    st.textContent = '✓ 4 מעברי מצלמה נוצרו אוטומטית';
+    st.className = 'status-text done';
+    pbtn.disabled = false;
+    pbtn.innerHTML = '<i class="ti ti-refresh" aria-hidden="true"></i> הרץ שוב';
+    podcastRunning = false;
+    podcastDone = true;
+    pbtn.onclick = function() {
+      resetPodcast();
+      setTimeout(runPodcastDemo, 50);
+    };
+  }, 3700);
 }
 
 function runDemo() {

@@ -114,6 +114,14 @@
           <p>זיהוי אוטומטי של קטעי שקט בטיימליין וחיתוכם בלחיצה אחת ב-Premiere Pro.</p>
         </div>
         <div class="feat">
+          <div class="feat-icon"><i class="ti ti-camera" aria-hidden="true"></i></div>
+          <div class="feat-title-row">
+            <h3>עריכת פודקאסט</h3>
+            <span class="beta-tag">בטא</span>
+          </div>
+          <p>מעבר מצלמות אוטומטי בין 2-4 דוברים לפי מי מדבר, כולל זווית "כולם ביחד". זמין ב-Premiere Pro בלבד.</p>
+        </div>
+        <div class="feat">
           <div class="feat-icon"><i class="ti ti-currency-shekel" aria-hidden="true"></i></div>
           <h3>חינמי לחלוטין</h3>
           <p>קוד פתוח ובחינם, ללא מנויים.</p>
@@ -166,7 +174,27 @@
                 חתוך שקט
               </button>
             </div>
-            
+
+            <div class="tl-label podcast-label">
+              מולטיקאם — עריכת פודקאסט
+              <span class="beta-tag">בטא</span>
+              <span class="platform-note">Premiere Pro בלבד</span>
+            </div>
+            <div class="tl-track podcast-track" id="pr-podcast-track">
+              <div class="tl-bg"></div>
+              <div class="tl-cam" id="pod-seg1" style="left:20px;width:80px">דובר א׳</div>
+              <div class="tl-cam cam2" id="pod-seg2" style="left:100px;width:70px">דובר ב׳</div>
+              <div class="tl-cam" id="pod-seg3" style="left:170px;width:60px">דובר א׳</div>
+              <div class="tl-cam cam-master" id="pod-seg4" style="left:230px;width:100px">כולם ביחד</div>
+              <div class="tl-cam cam2" id="pod-seg5" style="left:330px;width:100px">דובר ב׳</div>
+            </div>
+            <div class="silence-btn-row">
+              <button class="podcast-btn" id="podcast-btn" onclick="runPodcastDemo()">
+                <i class="ti ti-camera" aria-hidden="true"></i>
+                עריכת פודקאסט
+              </button>
+            </div>
+
           </div>
 
           <div id="view-dv" style="display:none">
