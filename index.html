@@ -133,100 +133,218 @@
 
     <div class="demo-section">
       <div class="section-label">ראה איך זה עובד</div>
-      <h2 class="section-title-demo">לחץ על "צור כתוביות" וראה את הקסם</h2>
+      <h2 class="section-title-demo">כלי ה-AI שלנו בפעולה</h2>
+      <p class="section-sub-demo">בחרו תכונה, ולחצו על הכפתור בפאנל כדי לראות אותה קורית ישירות על הטיימליין</p>
 
-      <div class="demo-box">
-        <div class="demo-topbar">
-          <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
-          <span id="app-title">Premiere Pro — AutoCaps</span>
-        </div>
-        <div class="demo-tabs">
-          <div class="demo-tab active" id="tab-pr" onclick="switchTab('pr')">Premiere Pro</div>
-          <div class="demo-tab" id="tab-dv" onclick="switchTab('dv')">DaVinci Resolve</div>
-        </div>
-        <div class="demo-body">
+      <div class="feature-pills" role="tablist">
+        <button class="fpill active" id="fpill-captions" data-feature="captions" onclick="switchFeature('captions')">
+          <i class="ti ti-language" aria-hidden="true"></i>כתוביות
+        </button>
+        <button class="fpill" id="fpill-silence" data-feature="silence" onclick="switchFeature('silence')">
+          <i class="ti ti-scissors" aria-hidden="true"></i>חיתוך שקט
+        </button>
+        <button class="fpill" id="fpill-podcast" data-feature="podcast" onclick="switchFeature('podcast')">
+          <i class="ti ti-camera" aria-hidden="true"></i>פודקאסט
+          <span class="beta-tag pill-beta">בטא</span>
+        </button>
+      </div>
 
-          <div id="view-pr">
-            <div class="tl-label">טיימליין</div>
-            <div class="tl-track caption-track" id="pr-cap-track">
-              <div class="tl-bg"></div>
-              <div class="tl-caption" id="pr-cap1" style="left:20px;width:110px">כתוביות בעברית בחינם</div>
-              <div class="tl-caption" id="pr-cap2" style="left:140px;width:95px">על המחשב שלכם</div>
-              <div class="tl-caption" id="pr-cap3" style="left:250px;width:110px">AutoCaps עם</div>
-            </div>
-            <div class="tl-track" id="pr-video-track">
-              <div class="tl-bg"></div>
-              <div class="tl-clip video" id="pr-v1">V1 — ראיון</div>
-              <div class="tl-gap" id="pr-gap1" style="left:140px;width:35px"></div>
-              <div class="tl-clip video v2-color" id="pr-v2" style="left:175px;width:90px">B-Roll</div>
-              <div class="tl-gap" id="pr-gap2" style="left:265px;width:35px"></div>
-              <div class="tl-clip video" style="left:300px;width:130px" id="pr-v3">סיכום</div>
-            </div>
-            <div class="tl-track" id="pr-audio-track">
-              <div class="tl-bg"></div>
-              <div class="tl-clip audio" id="pr-a1">A1 — אודיו ראשי</div>
-              <div class="tl-gap" id="pr-gap3" style="left:220px;width:40px"></div>
-              <div class="tl-clip audio music-color" id="pr-a2" style="left:260px;width:80px">מוזיקה</div>
-            </div>
-            <div class="silence-btn-row">
-              <button class="silence-btn" id="silence-btn" onclick="cutSilence()">
-                <i class="ti ti-scissors" aria-hidden="true"></i>
-                חתוך שקט
-              </button>
-            </div>
+      <div class="showcase">
+        <div class="showcase-glow"></div>
 
-            <div class="tl-label podcast-label">
-              מולטיקאם — עריכת פודקאסט
-              <span class="beta-tag">בטא</span>
-              <span class="platform-note">Premiere Pro בלבד</span>
-            </div>
-            <div class="tl-track podcast-track" id="pr-podcast-track">
-              <div class="tl-bg"></div>
-              <div class="tl-cam" id="pod-seg1" style="left:20px;width:80px">דובר א׳</div>
-              <div class="tl-cam cam2" id="pod-seg2" style="left:100px;width:70px">דובר ב׳</div>
-              <div class="tl-cam" id="pod-seg3" style="left:170px;width:60px">דובר א׳</div>
-              <div class="tl-cam cam-master" id="pod-seg4" style="left:230px;width:100px">כולם ביחד</div>
-              <div class="tl-cam cam2" id="pod-seg5" style="left:330px;width:100px">דובר ב׳</div>
-            </div>
-            <div class="silence-btn-row">
-              <button class="podcast-btn" id="podcast-btn" onclick="runPodcastDemo()">
-                <i class="ti ti-camera" aria-hidden="true"></i>
-                עריכת פודקאסט
-              </button>
-            </div>
+        <div class="showcase-stage">
 
+          <!-- background app window (Premiere Pro) -->
+          <div class="app-window">
+            <div class="win-topbar">
+              <span class="win-app-name"><i class="ti ti-brand-adobe" aria-hidden="true"></i>Adobe Premiere Pro</span>
+              <span class="win-app-sub">Project — Edited.prproj</span>
+            </div>
+            <div class="win-body">
+
+              <div class="feature-stage active" data-stage="captions">
+                <div class="tl-label">טיימליין</div>
+                <div class="tl-track caption-track" id="cap-cap-track">
+                  <div class="tl-bg"></div>
+                  <div class="tl-caption" id="cap-cap1" style="left:20px;width:120px">כתוביות בעברית בחינם</div>
+                  <div class="tl-caption" id="cap-cap2" style="left:150px;width:100px">על המחשב שלכם</div>
+                  <div class="tl-caption" id="cap-cap3" style="left:260px;width:120px">AutoCaps עם</div>
+                </div>
+                <div class="tl-track">
+                  <div class="tl-bg"></div>
+                  <div class="tl-clip video-sub">V1 — ראיון</div>
+                </div>
+                <div class="tl-track waveform-track" id="cap-audio-track">
+                  <div class="tl-bg"></div>
+                  <div class="waveform" id="cap-waveform"></div>
+                  <div class="wf-highlight" id="cap-wf1" style="left:20px;width:120px"></div>
+                  <div class="wf-highlight" id="cap-wf2" style="left:150px;width:100px"></div>
+                  <div class="wf-highlight" id="cap-wf3" style="left:260px;width:120px"></div>
+                </div>
+              </div>
+
+              <div class="feature-stage" data-stage="silence">
+                <div class="tl-label">טיימליין</div>
+                <div class="tl-track" id="pr-video-track">
+                  <div class="tl-bg"></div>
+                  <div class="tl-clip video" id="pr-v1">V1 — ראיון</div>
+                  <div class="tl-clip video v2-color" id="pr-v2" style="left:175px;width:90px">B-Roll</div>
+                  <div class="tl-clip video" id="pr-v3" style="left:300px;width:130px">סיכום</div>
+                </div>
+                <div class="tl-track waveform-track" id="pr-audio-track">
+                  <div class="tl-bg"></div>
+                  <div class="audio-seg speech-seg" id="seg-sp1" style="left:20px;width:120px"><div class="waveform"></div></div>
+                  <div class="audio-seg gap-seg" id="seg-gap1" style="left:140px;width:35px"></div>
+                  <div class="audio-seg speech-seg" id="seg-sp2" style="left:175px;width:90px"><div class="waveform"></div></div>
+                  <div class="audio-seg gap-seg" id="seg-gap2" style="left:265px;width:35px"></div>
+                  <div class="audio-seg speech-seg" id="seg-sp3" style="left:300px;width:130px"><div class="waveform"></div></div>
+                </div>
+              </div>
+
+              <div class="feature-stage" data-stage="podcast">
+                <div class="tl-label">מולטיקאם — 3 מצלמות</div>
+                <div class="cam-stack" id="cam-stack">
+                  <div class="cam-track-row" id="camA-track" data-cam="camA">
+                    <div class="tl-bg"></div>
+                    <span class="cam-track-label">מצלמה — דובר א׳</span>
+                    <div class="cam-seg camA" data-seg="1" style="left:20px;width:80px"></div>
+                    <div class="cam-seg camA" data-seg="2" style="left:100px;width:70px"></div>
+                    <div class="cam-seg camA" data-seg="3" style="left:170px;width:60px"></div>
+                    <div class="cam-seg camA" data-seg="4" style="left:230px;width:100px"></div>
+                    <div class="cam-seg camA" data-seg="5" style="left:330px;width:100px"></div>
+                  </div>
+                  <div class="cam-track-row" id="camB-track" data-cam="camB">
+                    <div class="tl-bg"></div>
+                    <span class="cam-track-label">מצלמה — דובר ב׳</span>
+                    <div class="cam-seg camB" data-seg="1" style="left:20px;width:80px"></div>
+                    <div class="cam-seg camB" data-seg="2" style="left:100px;width:70px"></div>
+                    <div class="cam-seg camB" data-seg="3" style="left:170px;width:60px"></div>
+                    <div class="cam-seg camB" data-seg="4" style="left:230px;width:100px"></div>
+                    <div class="cam-seg camB" data-seg="5" style="left:330px;width:100px"></div>
+                  </div>
+                  <div class="cam-track-row" id="master-track" data-cam="master">
+                    <div class="tl-bg"></div>
+                    <span class="cam-track-label">מצלמה — כולם</span>
+                    <div class="cam-seg master" data-seg="1" style="left:20px;width:80px"></div>
+                    <div class="cam-seg master" data-seg="2" style="left:100px;width:70px"></div>
+                    <div class="cam-seg master" data-seg="3" style="left:170px;width:60px"></div>
+                    <div class="cam-seg master" data-seg="4" style="left:230px;width:100px"></div>
+                    <div class="cam-seg master" data-seg="5" style="left:330px;width:100px"></div>
+                  </div>
+                  <div class="cut-line-layer" id="podcast-cutlines">
+                    <div class="cut-marker" style="left:100px"></div>
+                    <div class="cut-marker" style="left:170px"></div>
+                    <div class="cut-marker" style="left:230px"></div>
+                    <div class="cut-marker" style="left:330px"></div>
+                  </div>
+                </div>
+
+                <div class="tl-track waveform-track mic-track mic1" id="mic1-track">
+                  <div class="tl-bg"></div>
+                  <span class="cam-track-label">מיקרופון — דובר א׳</span>
+                  <div class="audio-seg mic-seg mic1" data-seg="1" style="left:20px;width:80px"><div class="waveform"></div></div>
+                  <div class="audio-seg mic-seg mic1" data-seg="2" style="left:100px;width:70px"><div class="waveform"></div></div>
+                  <div class="audio-seg mic-seg mic1" data-seg="3" style="left:170px;width:60px"><div class="waveform"></div></div>
+                  <div class="audio-seg mic-seg mic1" data-seg="4" style="left:230px;width:100px"><div class="waveform"></div></div>
+                  <div class="audio-seg mic-seg mic1" data-seg="5" style="left:330px;width:100px"><div class="waveform"></div></div>
+                </div>
+                <div class="tl-track waveform-track mic-track mic2" id="mic2-track">
+                  <div class="tl-bg"></div>
+                  <span class="cam-track-label">מיקרופון — דובר ב׳</span>
+                  <div class="audio-seg mic-seg mic2" data-seg="1" style="left:20px;width:80px"><div class="waveform"></div></div>
+                  <div class="audio-seg mic-seg mic2" data-seg="2" style="left:100px;width:70px"><div class="waveform"></div></div>
+                  <div class="audio-seg mic-seg mic2" data-seg="3" style="left:170px;width:60px"><div class="waveform"></div></div>
+                  <div class="audio-seg mic-seg mic2" data-seg="4" style="left:230px;width:100px"><div class="waveform"></div></div>
+                  <div class="audio-seg mic-seg mic2" data-seg="5" style="left:330px;width:100px"><div class="waveform"></div></div>
+                </div>
+              </div>
+
+            </div>
           </div>
 
-          <div id="view-dv" style="display:none">
-            <div class="tl-label">cut page — טיימליין</div>
-            <div class="tl-track caption-track" id="dv-cap-track">
-              <div class="tl-bg"></div>
-              <div class="tl-caption" id="dv-cap1" style="left:20px;width:100px">כתוביות בעברית</div>
-              <div class="tl-caption" id="dv-cap2" style="left:135px;width:90px">חינם לגמרי</div>
-              <div class="tl-caption" id="dv-cap3" style="left:240px;width:110px">בקוד פתוח</div>
+          <!-- foreground tool panel window (AutoCaps) -->
+          <div class="tool-window">
+            <div class="win-topbar tool-topbar">
+              <div class="win-dots"><div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div></div>
+              <span class="tool-win-title" id="tool-win-title">AutoCaps — כתוביות</span>
             </div>
-            <div class="tl-track">
-              <div class="tl-bg"></div>
-              <div class="tl-clip video dv-video" style="left:20px;width:180px">V1 — ראיון ראשי</div>
-              <div class="tl-clip video dv-video" style="left:215px;width:130px">V1 — המשך</div>
+            <div class="tool-body">
+
+              <div class="tool-panel active" data-panel="captions">
+                <div class="tool-panel-icon"><i class="ti ti-language" aria-hidden="true"></i></div>
+                <h4>AutoCaps</h4>
+                <p class="tool-panel-desc">תמלול אוטומטי לעברית, ישירות על הטיימליין הפעיל.</p>
+                <div class="run-btn-wrap">
+                  <button class="run-btn" id="btn-captions" onclick="runCaptionsDemo()">
+                    <i class="ti ti-sparkles" aria-hidden="true"></i>
+                    צור כתוביות
+                  </button>
+                  <div class="try-hint">
+                    <svg viewBox="0 0 60 60" width="46" height="46">
+                      <!-- Flipped horizontally -->
+                      <path d="M56 4 C 56 30, 46 40, 26 36" fill="none" stroke="#e0a855" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="3 5"/>
+                      <path d="M35 32 L 25 37 L 30 47" fill="none" stroke="#e0a855" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                    <span>נסו עכשיו</span>
+                  </div>
+                </div>
+                <div class="status-row">
+                  <div class="spinner" id="spinner-captions"></div>
+                  <div class="status-text" id="status-captions">מוכן להרצה</div>
+                </div>
+              </div>
+
+              <div class="tool-panel" data-panel="silence">
+                <div class="tool-panel-icon"><i class="ti ti-scissors" aria-hidden="true"></i></div>
+                <h4>חיתוך שקט</h4>
+                <p class="tool-panel-desc">מזהה קטעי שקט בטיימליין וחותך אותם אוטומטית.</p>
+                <div class="run-btn-wrap">
+                  <button class="run-btn" id="btn-silence" onclick="cutSilence()">
+                    <i class="ti ti-scissors" aria-hidden="true"></i>
+                    חתוך שקט
+                  </button>
+                  <div class="try-hint">
+                    <svg viewBox="0 0 60 60" width="46" height="46">
+                      <!-- Flipped horizontally -->
+                      <path d="M56 4 C 56 30, 46 40, 26 36" fill="none" stroke="#e0a855" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="3 5"/>
+                      <path d="M35 32 L 25 37 L 30 47" fill="none" stroke="#e0a855" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                    <span>נסו עכשיו</span>
+                  </div>
+                </div>
+                <div class="status-row">
+                  <div class="spinner" id="spinner-silence"></div>
+                  <div class="status-text" id="status-silence">מוכן להרצה</div>
+                </div>
+              </div>
+
+              <div class="tool-panel" data-panel="podcast">
+                <div class="tool-panel-icon"><i class="ti ti-camera" aria-hidden="true"></i></div>
+                <h4>פודקאסט<span class="beta-tag">בטא</span></h4>
+                <p class="tool-panel-desc">מעבר מצלמות אוטומטי לפי מי מדבר, עד 4 דוברים.</p>
+                <div class="run-btn-wrap">
+                  <button class="run-btn" id="btn-podcast" onclick="runPodcastDemo()">
+                    <i class="ti ti-camera" aria-hidden="true"></i>
+                    עריכת פודקאסט
+                  </button>
+                  <div class="try-hint">
+                    <svg viewBox="0 0 60 60" width="46" height="46">
+                      <!-- Flipped horizontally -->
+                      <path d="M56 4 C 56 30, 46 40, 26 36" fill="none" stroke="#e0a855" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="3 5"/>
+                      <path d="M35 32 L 25 37 L 30 47" fill="none" stroke="#e0a855" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                    <span>נסו עכשיו</span>
+                  </div>
+                  </div>
+                <div class="status-row">
+                  <div class="spinner" id="spinner-podcast"></div>
+                  <div class="status-text" id="status-podcast">מוכן להרצה</div>
+                </div>
+              </div>
+
             </div>
-            <div class="tl-track">
-              <div class="tl-bg"></div>
-              <div class="tl-clip audio" style="left:20px;width:325px">A1 — אודיו מלא</div>
-            </div>
-            
           </div>
 
-          <div class="demo-btn-row">
-            <button class="demo-btn" id="run-btn" onclick="runDemo()">
-              <i class="ti ti-sparkles" aria-hidden="true"></i>
-              צור כתוביות
-            </button>
-          </div>
-          <div class="status-row">
-            <div class="spinner" id="spinner"></div>
-            <div class="status-text" id="status-text">לחץ כדי לראות את התוסף בפעולה</div>
-          </div>
         </div>
       </div>
     </div>
