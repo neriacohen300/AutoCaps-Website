@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AutoCaps — תוסף חינמי לתמלול כתוביות עברית אוטומטי, שפועל לוקאלית בפרמייר פרו ובדה וינצ'י.">
   <title>AutoCaps — תמלול עברית אוטומטי לפרמייר ודה וינצ'י</title>
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
-  
+
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.44.0/dist/tabler-icons.min.css">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,7 +19,46 @@
       AutoCaps — תמלול עברית אוטומטי לפרמייר ודה וינצ'י
     </h2>
 
-    <div class="hero">
+    <nav class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a class="nav-brand" href="#top">
+          <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="100" height="100" rx="26" fill="#121216" stroke="#232329" stroke-width="1.5"/>
+            <path d="M 28 32 C 28 27, 32 23, 37 23 H 63 C 68 23, 72 27, 72 32 V 52 C 72 57, 68 61, 63 61 H 46 L 36 71 V 61 C 31 61, 28 57, 28 52 Z" fill="#171721" stroke="url(#nav_logo_gradient)" stroke-width="2" stroke-linejoin="round"/>
+            <rect x="38" y="37" width="4" height="14" rx="2" fill="url(#nav_logo_gradient)" />
+            <rect x="44" y="31" width="4" height="24" rx="2" fill="url(#nav_logo_gradient)" />
+            <rect x="50" y="39" width="4" height="10" rx="2" fill="url(#nav_logo_gradient)" />
+            <rect x="56" y="34" width="4" height="20" rx="2" fill="url(#nav_logo_gradient)" />
+            <rect x="62" y="41" width="4" height="7"  rx="2" fill="url(#nav_logo_gradient)" />
+            <defs>
+              <linearGradient id="nav_logo_gradient" x1="28" y1="23" x2="72" y2="71" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#7c6af7"/>
+                <stop offset="0.6" stop-color="#9d5bf5"/>
+                <stop offset="1" stop-color="#e055a1"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span>AutoCaps</span>
+        </a>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="פתח תפריט" aria-expanded="false" aria-controls="nav-links">
+          <i class="ti ti-menu-2" aria-hidden="true"></i>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#features">תכונות</a>
+          <a href="#demo">הדגמה</a>
+          <a href="https://github.com/neriacohen300/AutoCaps" target="_blank">GitHub</a>
+        </div>
+
+        <a class="nav-cta" href="https://github.com/neriacohen300/AutoCaps/releases/latest" target="_blank">
+          <i class="ti ti-download" aria-hidden="true"></i>
+          הורדה חינמית
+        </a>
+      </div>
+    </nav>
+
+    <div class="hero" id="top">
       <div class="logo-container">
         <svg width="85" height="85" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="100" height="100" rx="26" fill="#121216" stroke="#232329" stroke-width="1.5"/>
@@ -88,7 +131,7 @@
 
     <div class="divider"></div>
 
-    <div class="section">
+    <div class="section" id="features">
       <div class="section-label">מה מייחד את AutoCaps</div>
       <h2>תמלול אמיתי, בלי פשרות</h2>
       <p>AutoCaps פועל לוקאלית — אין שליחת קבצים לשרת חיצוני, אין עלויות נסתרות, אין תלות בחיבור לאינטרנט.</p>
@@ -131,7 +174,7 @@
 
     <div class="divider"></div>
 
-    <div class="demo-section">
+    <div class="demo-section" id="demo">
       <div class="section-label">ראה איך זה עובד</div>
       <h2 class="section-title-demo">כלי ה-AI שלנו בפעולה</h2>
       <p class="section-sub-demo">בחרו תכונה, ולחצו על הכפתור בפאנל כדי לראות אותה קורית ישירות על הטיימליין</p>
@@ -355,6 +398,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
