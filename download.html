@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="הורידו את AutoCaps לפרמייר פרו, דה וינצ׳י ריזולב או אפטר אפקטס.">
+  <title>הורדה — AutoCaps</title>
+
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.44.0/dist/tabler-icons.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .dl-hero {
+      padding: 70px 40px 40px;
+      text-align: center;
+    }
+    .dl-hero h1 {
+      font-size: 38px;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+      color: #f0ede6;
+      margin-bottom: 14px;
+    }
+    .dl-hero p {
+      font-size: 16px;
+      color: #888;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .dl-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 40px 100px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 820px) {
+      .dl-grid { grid-template-columns: 1fr; padding: 20px 24px 80px; }
+    }
+    .dl-card {
+      background: #141418;
+      border: 0.5px solid #2a2a30;
+      border-radius: 16px;
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .dl-card:hover {
+      border-color: #7c6af7;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(124, 106, 247, 0.15);
+    }
+    .dl-card img {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 18px;
+    }
+    .dl-card h3 {
+      font-size: 19px;
+      font-weight: 600;
+      color: #f0ede6;
+      margin-bottom: 8px;
+    }
+    .dl-card p {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+    .dl-card .btn-primary {
+      width: 100%;
+      justify-content: center;
+      padding: 12px 20px;
+      font-size: 14.5px;
+    }
+    .dl-note {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      color: #666;
+      font-size: 13.5px;
+      padding: 0 40px 60px;
+      line-height: 1.7;
+    }
+    .dl-note a { color: #7c6af7; text-decoration: none; }
+    .dl-note a:hover { text-decoration: underline; }
+    .dl-version {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #555;
+      min-height: 16px;
+    }
+    .dl-version.error { color: #b56; }
+  </style>
+</head>
+<body>
+  <div class="site">
+
+    <nav class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a class="nav-brand" href="index.html">
+          <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="100" height="100" rx="26" fill="#121216" stroke="#232329" stroke-width="1.5"/>
+            <path d="M 28 32 C 28 27, 32 23, 37 23 H 63 C 68 23, 72 27, 72 32 V 52 C 72 57, 68 61, 63 61 H 46 L 36 71 V 61 C 31 61, 28 57, 28 52 Z" fill="#171721" stroke="url(#nav_logo_gradient_dl)" stroke-width="2" stroke-linejoin="round"/>
+            <rect x="38" y="37" width="4" height="14" rx="2" fill="url(#nav_logo_gradient_dl)" />
+            <rect x="44" y="31" width="4" height="24" rx="2" fill="url(#nav_logo_gradient_dl)" />
+            <rect x="50" y="39" width="4" height="10" rx="2" fill="url(#nav_logo_gradient_dl)" />
+            <rect x="56" y="34" width="4" height="20" rx="2" fill="url(#nav_logo_gradient_dl)" />
+            <rect x="62" y="41" width="4" height="7"  rx="2" fill="url(#nav_logo_gradient_dl)" />
+            <defs>
+              <linearGradient id="nav_logo_gradient_dl" x1="28" y1="23" x2="72" y2="71" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#7c6af7"/>
+                <stop offset="0.6" stop-color="#9d5bf5"/>
+                <stop offset="1" stop-color="#e055a1"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span>AutoCaps</span>
+        </a>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="פתח תפריט" aria-expanded="false" aria-controls="nav-links">
+          <i class="ti ti-menu-2" aria-hidden="true"></i>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="index.html#features">תכונות</a>
+          <a href="index.html#demo">הדגמה</a>
+          <a href="https://github.com/neriacohen300/AutoCaps" target="_blank">GitHub</a>
+        </div>
+
+        <a class="nav-cta" href="https://github.com/neriacohen300/AutoCaps" target="_blank">
+          <i class="ti ti-brand-github" aria-hidden="true"></i>
+          GitHub
+        </a>
+      </div>
+    </nav>
+
+    <div class="dl-hero">
+      <h1>בחרו תוכנה להורדה</h1>
+      <p>AutoCaps זמין כתוסף עבור פרמייר פרו, דה וינצ׳י ריזולב ואפטר אפקטס. בחרו את התוכנה שבה אתם עורכים כדי להוריד את הגרסה המתאימה.</p>
+    </div>
+
+    <div class="dl-grid">
+
+      <div class="dl-card">
+        <img class="app-logo" src="Assets/PP_logo.png" alt="Premiere Pro Logo" style="width:56px;height:56px;">
+        <h3>Adobe Premiere Pro</h3>
+        <p>הגרסה הרגילה — כתוביות, חיתוך שקט ועריכת פודקאסט.</p>
+        <a class="btn-primary" id="dl-premiere" data-product="premiere" href="https://github.com/neriacohen300/AutoCaps/releases" target="_blank">
+          <i class="ti ti-download" aria-hidden="true"></i>
+          <span class="dl-label">הורדה ל-Premiere Pro</span>
+        </a>
+        <span class="dl-version" id="ver-premiere"></span>
+      </div>
+
+      <div class="dl-card">
+        <img class="app-logo" src="Assets/DR_logo.png" alt="DaVinci Resolve Logo" style="width:56px;height:56px;">
+        <h3>DaVinci Resolve</h3>
+        <p>גרסה ייעודית לתוסף בתוך Resolve — כתוביות אוטומטיות בעברית.</p>
+        <a class="btn-primary" id="dl-resolve" data-product="resolve" href="https://github.com/neriacohen300/AutoCaps/releases" target="_blank">
+          <i class="ti ti-download" aria-hidden="true"></i>
+          <span class="dl-label">הורדה ל-DaVinci Resolve</span>
+        </a>
+        <span class="dl-version" id="ver-resolve"></span>
+      </div>
+
+      <div class="dl-card">
+        <img class="app-logo" src="Assets/AE_logo.png" alt="After Effects Logo" style="width:56px;height:56px;">
+        <h3>Adobe After Effects</h3>
+        <p>גרסה ייעודית לתוסף בתוך After Effects.</p>
+        <a class="btn-primary" id="dl-ae" data-product="ae" href="https://github.com/neriacohen300/AutoCaps/releases" target="_blank">
+          <i class="ti ti-download" aria-hidden="true"></i>
+          <span class="dl-label">הורדה ל-After Effects</span>
+        </a>
+        <span class="dl-version" id="ver-ae"></span>
+      </div>
+
+    </div>
+
+    <p class="dl-note">לא בטוחים באיזו גרסה לבחור? כל הגרסאות זמינות גם בעמוד ה־<a href="https://github.com/neriacohen300/AutoCaps/releases" target="_blank">Releases</a> ב-GitHub.</p>
+
+    <div class="divider"></div>
+    <div class="footer">
+      <p>AutoCaps היא תוכנת קוד פתוח. <a href="https://github.com/neriacohen300/AutoCaps" target="_blank">GitHub</a> · <a href="index.html">חזרה לעמוד הבית</a></p>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+  <script src="latest-release.js" defer></script>
+</body>
+</html>
