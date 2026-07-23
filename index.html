@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AutoCaps — תוסף חינמי לתמלול כתוביות עברית אוטומטי, שפועל לוקאלית בפרמייר פרו ובדה וינצ'י.">
-  <title>AutoCaps — תמלול עברית אוטומטי לפרמייר ודה וינצ'י</title>
+  <meta name="description" content="AutoCaps — תוסף חינמי לתמלול כתוביות עברית אוטומטי, שפועל לוקאלית ב-Premiere, DaVinci Resolve וב-After Effects.">
+  <title>AutoCaps - כתוביות בעברית בחינם על המחשב שלכם</title>
 
-  <link rel="icon" href="data:,">
+  <link rel="icon" type="image/png" href="Assets/favicon.png">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.44.0/dist/tabler-icons.min.css">
@@ -16,27 +16,42 @@
 <body>
   <div class="site">
     <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">
-      AutoCaps — תמלול עברית אוטומטי לפרמייר ודה וינצ'י
+      AutoCaps — תמלול עברית אוטומטי לפרמייר, אפטר אפקטס ודה וינצ'י
     </h2>
 
     <nav class="navbar" id="navbar">
       <div class="nav-inner">
         <a class="nav-brand" href="#top">
-          <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="100" height="100" rx="26" fill="#121216" stroke="#232329" stroke-width="1.5"/>
-            <path d="M 28 32 C 28 27, 32 23, 37 23 H 63 C 68 23, 72 27, 72 32 V 52 C 72 57, 68 61, 63 61 H 46 L 36 71 V 61 C 31 61, 28 57, 28 52 Z" fill="#171721" stroke="url(#nav_logo_gradient)" stroke-width="2" stroke-linejoin="round"/>
-            <rect x="38" y="37" width="4" height="14" rx="2" fill="url(#nav_logo_gradient)" />
-            <rect x="44" y="31" width="4" height="24" rx="2" fill="url(#nav_logo_gradient)" />
-            <rect x="50" y="39" width="4" height="10" rx="2" fill="url(#nav_logo_gradient)" />
-            <rect x="56" y="34" width="4" height="20" rx="2" fill="url(#nav_logo_gradient)" />
-            <rect x="62" y="41" width="4" height="7"  rx="2" fill="url(#nav_logo_gradient)" />
+          <!-- Standalone Icon Logo for Navbar -->
+          <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
-              <linearGradient id="nav_logo_gradient" x1="28" y1="23" x2="72" y2="71" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#7c6af7"/>
-                <stop offset="0.6" stop-color="#9d5bf5"/>
-                <stop offset="1" stop-color="#e055a1"/>
+              <linearGradient id="nav_purpleGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#9D4EDD"/>
+                <stop offset="100%" stop-color="#7B2CBF"/>
+              </linearGradient>
+              <linearGradient id="nav_cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00F5D4"/>
+                <stop offset="100%" stop-color="#00B4D8"/>
+              </linearGradient>
+              <linearGradient id="nav_iconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#240046"/>
+                <stop offset="100%" stop-color="#10002B"/>
               </linearGradient>
             </defs>
+
+            <!-- Base Icon Card -->
+            <rect x="0" y="0" width="100" height="100" rx="24" fill="url(#nav_iconBg)" stroke="#3C1A6E" stroke-width="0"/>
+            <!-- Speech Bubble Body -->
+            <path d="M 28,30 H 72 A 10,10 0 0,1 82,40 V 60 A 10,10 0 0,1 72,70 H 52 L 40,80 V 70 H 28 A 10,10 0 0,1 18,60 V 40 A 10,10 0 0,1 28,30 Z" 
+                  fill="#1A0826" stroke="url(#nav_purpleGlow)" stroke-width="3"/>
+
+            <!-- Audio Waveform to Subtitle Lines inside icon -->
+            <rect x="28" y="45" width="4" height="12" rx="2" fill="url(#nav_cyanGlow)"/>
+            <rect x="35" y="41" width="4" height="20" rx="2" fill="url(#nav_cyanGlow)"/>
+            
+            <!-- RTL Subtitle Bars -->
+            <rect x="44" y="44" width="24" height="5" rx="2.5" fill="#FFFFFF"/>
+            <rect x="44" y="53" width="18" height="5" rx="2.5" fill="url(#nav_cyanGlow)"/>
           </svg>
           <span>AutoCaps</span>
         </a>
@@ -59,36 +74,46 @@
     </nav>
 
     <div class="hero" id="top">
-      <div class="logo-container">
-        <svg width="85" height="85" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="100" height="100" rx="26" fill="#121216" stroke="#232329" stroke-width="1.5"/>
-          
-          <circle cx="50" cy="50" r="30" fill="url(#logo_glow)" opacity="0.22" filter="blur(12px)"/>
-          
-          <path d="M 28 32 C 28 27, 32 23, 37 23 H 63 C 68 23, 72 27, 72 32 V 52 C 72 57, 68 61, 63 61 H 46 L 36 71 V 61 C 31 61, 28 57, 28 52 Z" fill="#171721" stroke="url(#logo_gradient)" stroke-width="2" stroke-linejoin="round"/>
-          
-          <rect x="38" y="37" width="4" height="14" rx="2" fill="url(#logo_gradient)" />
-          <rect x="44" y="31" width="4" height="24" rx="2" fill="url(#logo_gradient)" />
-          <rect x="50" y="39" width="4" height="10" rx="2" fill="url(#logo_gradient)" />
-          <rect x="56" y="34" width="4" height="20" rx="2" fill="url(#logo_gradient)" />
-          <rect x="62" y="41" width="4" height="7"  rx="2" fill="url(#logo_gradient)" />
-          
-          <rect x="38" y="52" width="16" height="3" rx="1.5" fill="#ffffff" opacity="0.8"/>
-          <rect x="56" y="52" width="8" height="3" rx="1.5" fill="#ffffff" opacity="0.4"/>
-
-          <path d="M 75 16 Q 75 21, 80 21 Q 75 21, 75 26 Q 75 21, 70 21 Q 75 21, 75 16 Z" fill="#b249f8"/>
-          
+      <div class="logo-container" style="display: flex; justify-content: center; margin-bottom: 2rem;">
+        <!-- Standalone Icon Logo for Hero -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="width: 100px; height: 100px;">
           <defs>
-            <linearGradient id="logo_gradient" x1="28" y1="23" x2="72" y2="71" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#7c6af7"/>
-              <stop offset="0.6" stop-color="#9d5bf5"/>
-              <stop offset="1" stop-color="#e055a1"/>
+            <!-- Gradients -->
+            <linearGradient id="purpleGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#9D4EDD"/>
+              <stop offset="100%" stop-color="#7B2CBF"/>
             </linearGradient>
-            <radialGradient id="logo_glow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#7c6af7"/>
-              <stop offset="1%" stop-color="#7c6af7" stop-opacity="0"/>
-            </radialGradient>
+
+            <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00F5D4"/>
+              <stop offset="100%" stop-color="#00B4D8"/>
+            </linearGradient>
+
+            <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#240046"/>
+              <stop offset="100%" stop-color="#10002B"/>
+            </linearGradient>
+
+            <!-- Subtle Glow Effect -->
+            <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
           </defs>
+
+          <!-- Base Icon Card -->
+          <rect x="0" y="0" width="100" height="100" rx="24" fill="url(#iconBg)" stroke="#3C1A6E" stroke-width="0"/>
+          <!-- Speech Bubble Body -->
+          <path d="M 28,30 H 72 A 10,10 0 0,1 82,40 V 60 A 10,10 0 0,1 72,70 H 52 L 40,80 V 70 H 28 A 10,10 0 0,1 18,60 V 40 A 10,10 0 0,1 28,30 Z" 
+                fill="#1A0826" stroke="url(#purpleGlow)" stroke-width="3" filter="url(#softGlow)"/>
+
+          <!-- Audio Waveform to Subtitle Lines inside icon -->
+          <rect x="28" y="45" width="4" height="12" rx="2" fill="url(#cyanGlow)"/>
+          <rect x="35" y="41" width="4" height="20" rx="2" fill="url(#cyanGlow)"/>
+          
+          <!-- RTL Subtitle Bars -->
+          <rect x="44" y="44" width="24" height="5" rx="2.5" fill="#FFFFFF"/>
+          <rect x="44" y="53" width="18" height="5" rx="2.5" fill="url(#cyanGlow)"/>
         </svg>
       </div>
 
@@ -133,7 +158,7 @@
           <i class="ti ti-language" aria-hidden="true"></i>עברית מלאה
         </div>
       </div>
-  
+    </div>
 
     <div class="divider"></div>
 
@@ -350,10 +375,9 @@
                   </button>
                   <div class="try-hint">
                     <svg viewBox="0 0 60 60" width="46" height="46">
-                      <!-- Flipped horizontally -->
                       <path d="M56 4 C 56 30, 46 40, 26 36" fill="none" stroke="#e0a855" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="3 5"/>
                       <path d="M35 32 L 25 37 L 30 47" fill="none" stroke="#e0a855" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+                    </svg>
                     <span>נסו עכשיו</span>
                   </div>
                 </div>
@@ -378,10 +402,9 @@
                   </button>
                   <div class="try-hint">
                     <svg viewBox="0 0 60 60" width="46" height="46">
-                      <!-- Flipped horizontally -->
                       <path d="M56 4 C 56 30, 46 40, 26 36" fill="none" stroke="#e0a855" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="3 5"/>
                       <path d="M35 32 L 25 37 L 30 47" fill="none" stroke="#e0a855" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+                    </svg>
                     <span>נסו עכשיו</span>
                   </div>
                 </div>
@@ -406,13 +429,12 @@
                   </button>
                   <div class="try-hint">
                     <svg viewBox="0 0 60 60" width="46" height="46">
-                      <!-- Flipped horizontally -->
                       <path d="M56 4 C 56 30, 46 40, 26 36" fill="none" stroke="#e0a855" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="3 5"/>
                       <path d="M35 32 L 25 37 L 30 47" fill="none" stroke="#e0a855" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+                    </svg>
                     <span>נסו עכשיו</span>
                   </div>
-                  </div>
+                </div>
                 <div class="status-row">
                   <div class="spinner" id="spinner-podcast"></div>
                   <div class="status-text" id="status-podcast">מוכן להרצה</div>
