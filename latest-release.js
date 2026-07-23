@@ -32,7 +32,10 @@
     link.target = '_blank';
 
     if (verEl) {
-      verEl.textContent = 'גרסה אחרונה: ' + release.tag_name;
+      // Strip suffix depending on the tag format
+      var cleanTag = release.tag_name.replace(/-(ae|resolve)$/, '');
+
+      verEl.textContent = 'גרסה אחרונה: ' + cleanTag;
       verEl.classList.remove('error');
     }
   }
